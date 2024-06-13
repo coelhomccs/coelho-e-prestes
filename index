@@ -1,56 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neymar</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <header>
-        <h1>Neymar</h1>
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#bio">Biografia</a></li>
-                <li><a href="#stats">Estatísticas</a></li>
-            </ul>
-        </nav>
-    </header>
-    <main>
-        <section id="home">
-            <h2>Bem-vindo à página sobre Neymar!</h2>
-            <p>Escolha uma das opções acima para saber mais.</p>
-        </section>
-        <section id="bio" style="display:none;">
-            <h2>Biografia de Neymar</h2>
-            <p>Aqui vai a biografia de Neymar...</p>
-        </section>
-        <section id="stats" style="display:none;">
-            <h2>Estatísticas de Neymar</h2>
-            <p>Aqui vão as estatísticas de Neymar...</p>
-        </section>
-    </main>
-    <footer>
-        <p>© 2024 Neymar. Todos os direitos reservados.</p>
-    </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const sections = document.querySelectorAll("section");
-            const navLinks = document.querySelectorAll("nav ul li a");
+/* Estilos gerais */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
 
-            navLinks.forEach(link => {
-                link.addEventListener("click", function(event) {
-                    event.preventDefault();
-                    const targetId = this.getAttribute("href").substring(1);
-                    const targetSection = document.getElementById(targetId);
-                    sections.forEach(section => {
-                        section.style.display = "none";
-                    });
-                    targetSection.style.display = "block";
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
